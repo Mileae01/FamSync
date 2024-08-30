@@ -3,8 +3,7 @@ html body{
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-image: url("./assets/forest-BG1.jpg");
-  background-size: cover;
+
 }
 .App-header{
   width: 100%;
@@ -17,7 +16,7 @@ html body{
 .App-footer{
   width: 100%;
   flex:1;
-  color: white;
+  color: black;
   border: 5px solid #6563d2;
   box-sizing: border-box;
 }
@@ -26,11 +25,13 @@ html body{
   color: white;
   border: 5px solid #d0ab6b;
   height: 70vh;
+  background-image: url("./assets/forest-BG1.jpg");
+  background-size: cover;
   
 }
 .App-sidebar{
   width: 20%;
- color: white;
+ color: black;
   border: 5px solid #e776f5;
   flex: 1;
   
@@ -47,4 +48,65 @@ html body{
   display: flex;
   flex-direction: row;
   width: 100%;
+  
+}
+.userCmp img{
+  width:60px;
+  height:60px;
+  padding: 0;
+  position: relative;
+  translate: 0 40px;
+  display: inline-block;
+}
+.userCmp p{
+  display:inline-block;
+}
+
+.addNewTodoCmp{
+  margin:10px
+}
+.addNewTodoCmp button{
+  width:100%
+}
+.addNewProjectCmp{
+  width:15px;
+  height: 15px;
+  right: 0;
+  border: 5px black solid;
+  
+}
+.addNewProjectCmp:hover{
+  background-color: #9a8b8b;
+}
+.ProjectsCmp {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.ProjectsCmp label{
+  width: 85%;
+}
+.ProjectCmp{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.RenameProjectCmp{
+  width:15px;
+  height: 15px;
+  border: 5px black solid;
+  flex: 1;
+}
+.RenameProjectCmp:hover {
+  background-color: #9a8b8b;
+}
+.deleteProjectCmp{
+  width:15px;
+  height: 15px;
+  border: 5px black solid;
+  right: 0;
+}
+.deleteProjectCmp:hover{
+  background-color: #9a8b8b;
 }

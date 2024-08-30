@@ -1,4 +1,6 @@
-export default function MainCmp({children}){
+import TodosCmp from "./TodosCmp.jsx";
+import EditTodoCmp from "./EditTodoCmp.jsx";
+export default function MainCmp(){
     return(
         <>
             <ol>
@@ -10,7 +12,8 @@ export default function MainCmp({children}){
                 <li></li>
             </ol>
             <div>
-                {children}
+                <TodosCmp/>
+                <EditTodoCmp/>
             </div>
         </>
     )
