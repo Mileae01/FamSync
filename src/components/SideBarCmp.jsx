@@ -1,3 +1,7 @@
+import UserCmp from "./UserCmp.jsx";
+import CalenderCmp from "./CalenderCmp.jsx";
+import AddNewTodoCmp from "./AddNewTodoCmp.jsx";
+import ProjectsCmp from "./ProjectsCmp.jsx";
 export default function SideBarCmp(){
     return(
         <>
@@ -25,6 +29,10 @@ export default function SideBarCmp(){
                     <li>edit project</li>
                 </ol>
             </ol>
+            <UserCmp/>
+            <AddNewTodoCmp/>
+            <CalenderCmp/>
+            <ProjectsCmp/>
         </>
     )
 }
