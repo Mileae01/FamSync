@@ -1,4 +1,4 @@
-export default function MainCmp(){
+export default function MainCmp({children}){
     return(
         <>
             <ol>
@@ -9,6 +9,9 @@ export default function MainCmp(){
                 <li></li>
                 <li></li>
             </ol>
+            <div>
+                {children}
+            </div>
         </>
     )
 }
