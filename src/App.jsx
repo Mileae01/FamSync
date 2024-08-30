@@ -1,8 +1,8 @@
 import './App.css'
-import SideBarCmp from "./SideBarCmp.jsx";
-import HeaderCmp from "./HeaderCmp.jsx";
-import MainCmp from "./MainCmp.jsx";
-import FooterCmp from "./FooterCmp.jsx";
+import SideBarCmp from "./components/SideBarCmp.jsx";
+import HeaderCmp from "./components/HeaderCmp.jsx";
+import MainCmp from "./components/MainCmp.jsx";
+import FooterCmp from "./components/FooterCmp.jsx";
 function App() {
 
   return (
