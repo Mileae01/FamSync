@@ -38,9 +38,11 @@ export default function ProjectsCmp() {
 
     return (
         <div className="ProjectsCmp">
-            <label>Projects</label>
-            <AddNewProjectCmp addProjects_PFn={handleAddNewProject}/>
-            <div className="ProjectCmpList">
+            <div className="ProjectsCmpHeader">
+                <label>Projects</label>
+                <AddNewProjectCmp addProjects_PFn={handleAddNewProject}/>
+            </div>
+            <div className="ProjectsCmpList">
                 {projects.map((project) => (
                     <ProjectCmp
                         key={project.id}

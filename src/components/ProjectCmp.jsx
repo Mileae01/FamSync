@@ -13,8 +13,13 @@ export default function ProjectCmp({project,select_PFn, removeProjects_PFn,isSel
         <div className={`ProjectCmp ${isSelected ? 'selected' : ''}`}
              onClick={handleOnClickEvent}>
             <label>{name}:</label>
-            <RenameProjectCmp />
-            <DeleteProjectCmp removeProjects_PFn={removeProjects_PFn}/>
+            {isSelected && (
+                <>
+                    <RenameProjectCmp />
+                    <DeleteProjectCmp removeProjects_PFn={removeProjects_PFn}/>
+                </>
+            )}
+            
         </div>
     )
 }

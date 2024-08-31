@@ -79,16 +79,14 @@ html body{
 }
 .ProjectsCmp {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 5px;
 }
 .ProjectsCmp label{
-  width: 80%;
+  flex: 1;
 }
 .ProjectCmp{
   width: 100%;
-
 }
 .RenameProjectCmp{
   width:15px;
@@ -102,6 +100,7 @@ html body{
   width:15px;
   height: 15px;
   border: 5px black solid;
+  right: 0;
 }
 .deleteProjectCmp:hover{
   background-color: #9a8b8b;
@@ -112,5 +111,11 @@ html body{
   flex-direction: row;
 }
 .ProjectCmp.selected{
+  width: 100%;
   background-color: #9a8b8b;
+  display: flex;
+  flex-direction: row;
+}
+.ProjectCmp.selected label {
+  flex: 1;
 }
