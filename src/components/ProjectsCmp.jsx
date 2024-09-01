@@ -1,12 +1,10 @@
 import ProjectCmp from "./ProjectCmp.jsx";
 import AddNewProjectCmp from "./AddNewProjectCmp.jsx";
-import DeleteProjectCmp from "./DeleteProjectCmp.jsx";
 import '../App.css'
 import {useState} from "react";
 
-export default function ProjectsCmp() {
+export default function ProjectsCmp({ setSelectedProject_Pfn, selectedProject }) {
     const [projects, setProjects] = useState([]);
-    const [selectedProject, setSelectedProject] = useState(null);
     const [counter, setCounter] = useState(0);
 
     function handleDeleteProject(project_) {
@@ -15,23 +13,19 @@ export default function ProjectsCmp() {
         }
     }
 
-    function handleSelectProject(project) {
-        console.log(project.id);
-        setSelectedProject(project);
-    }
-    function handleIsSelected(projectID){
-        if (selectedProject){
+    function handleIsSelected(projectID) {
+        if (selectedProject) {
             return selectedProject.id === projectID;
         }
         return false;
     }
+
     function handleAddNewProject() {
         const newProject = {
             id: counter,
             name: `asdfa ${counter}`,
-        }
-        // const newProject = <ProjectCmp nameProp={`Project ${projects.length+1}`} idProp={`${projects.length+1}`} />;
-        setCounter(counter + 1)
+        };
+        setCounter(counter + 1);
         const newProjects = [...projects, newProject];
         setProjects(newProjects);
     }
@@ -40,7 +34,7 @@ export default function ProjectsCmp() {
         <div className="ProjectsCmp">
             <div className="ProjectsCmpHeader">
                 <label>Projects</label>
-                <AddNewProjectCmp addProjects_PFn={handleAddNewProject}/>
+                <AddNewProjectCmp addProjects_PFn={handleAddNewProject} />
             </div>
             <div className="ProjectsCmpList">
                 {projects.map((project) => (
@@ -48,11 +42,11 @@ export default function ProjectsCmp() {
                         key={project.id}
                         project={project}
                         removeProjects_PFn={() => handleDeleteProject(project)}
-                        select_PFn={() => handleSelectProject(project)}
+                        setSelectedProject_Pfn={() => setSelectedProject_Pfn(project)}  // <-- Updated here
                         isSelected={handleIsSelected(project.id)}
                     />
                 ))}
             </div>
         </div>
-    )
+    );
 }
