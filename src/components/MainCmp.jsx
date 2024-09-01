@@ -1,6 +1,7 @@
 import TodosCmp from "./TodosCmp.jsx";
 import EditTodoCmp from "./EditTodoCmp.jsx";
-export default function MainCmp(){
+import ModalCmp from "./ModalCmp.jsx";
+export default function MainCmp({selectedProject}){
     return(
         <>
             <ol>
@@ -14,6 +15,15 @@ export default function MainCmp(){
             <div>
                 <TodosCmp/>
                 <EditTodoCmp/>
+                {
+                    selectedProject?(
+                      
+                            <h1>{selectedProject.name}</h1>
+                           
+                    
+                            
+                    ): <p>Please select a project</p>
+                }
             </div>
         </>
     )
