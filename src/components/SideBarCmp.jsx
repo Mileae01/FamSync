@@ -6,7 +6,7 @@ export default function SideBarCmp({ setSelectedProject_Pfn, selectedProject }) 
     return (
         <>
             <UserCmp />
-            <AddNewTodoCmp />
+            <AddNewTodoCmp project={selectedProject} />
             <CalenderCmp />
             <ProjectsCmp
                 selectedProject={selectedProject}

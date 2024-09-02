@@ -1,15 +1,19 @@
-export default function ModalCmp({children,closeModal_PFn,openModal_PFn,saveModal_PFn}) {
-    if(!openModal_PFn){
-        return null;
+import '../App.css'
+import {useRef} from "react";
+export default function ModalCmp({children,showModal_PFn,setShowModal_PFn,savebtn}) {
+    const modalRef = useRef();
+    
+    function closeModal(e) {
+        if (e.target === modalRef.current) {
+            setShowModal_PFn(false);
+        }
     }
-    return(
-        <div className = "ModalBackDrop">
-            <div className = "ModalHeader">
-                <button className = "ModalCloseButton" onClick={closeModal_PFn}>Close</button>
-                <button className = "ModalSaveButton" onClick={saveModal_PFn}>Close</button>
-            </div>
+
+    return(showModal_PFn &&
+        <div className = "Modal" ref={modalRef} onClick={closeModal}>
             <div className = "ModalContent">
                 {children}
+                <button onClick={savebtn} className = "save">save</button>
             </div>
         </div>
     )
