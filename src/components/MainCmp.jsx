@@ -1,8 +1,9 @@
 import TodosCmp from "./TodosCmp.jsx";
 import EditTodoCmp from "./EditTodoCmp.jsx";
 import ModalCmp from "./ModalCmp.jsx";
-export default function MainCmp({selectedProject}){
-    return(
+
+export default function MainCmp({selectedProject}) {
+    return (
         <>
             <ol>
                 <li>display by project or time</li>
@@ -15,15 +16,11 @@ export default function MainCmp({selectedProject}){
             <div>
                 <TodosCmp/>
                 <EditTodoCmp/>
-                {
-                    selectedProject?(
-                      
-                            <h1>{selectedProject.name}</h1>
-                           
-                    
-                            
-                    ): <p>Please select a project</p>
-                }
+                <ModalCmp>
+                    {selectedProject ? selectedProject.task.map((task, index) => (<div key={index}>{task}</div>)) :
+                        <p>select a project</p>}    
+                </ModalCmp>
+                
             </div>
         </>
     )
