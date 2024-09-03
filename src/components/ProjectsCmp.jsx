@@ -26,16 +26,17 @@ export default function ProjectsCmp({ setSelectedProject_Pfn, selectedProject })
         return false;
     }
 
-    function handleAddNewProject() {
+    function handleAddNewProject(name) {
         const newProject = {
             id: counter,
-            name: `asdfa ${counter}`,
+            name: `${name} ${counter}`,
             task:["t"]
         };
         setCounter(counter + 1);
         const newProjects = [...projects, newProject];
         setProjects(newProjects);
     }
+
 
     return (
         <div className="ProjectsCmp">
