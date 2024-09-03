@@ -2,11 +2,17 @@ import ProjectCmp from "./ProjectCmp.jsx";
 import AddNewProjectCmp from "./AddNewProjectCmp.jsx";
 import '../App.css'
 import {useState} from "react";
+import ProjectDropDownCmp from "./ProjectDropDownCmp.jsx";
 
 export default function ProjectsCmp({ setSelectedProject_Pfn, selectedProject }) {
     const [projects, setProjects] = useState([]);
     const [counter, setCounter] = useState(0);
-
+    const [showProjects,setShowProjects] = useState(false);
+    
+    function toggleShowProjects(){
+        console.log("toggleShowProjects");
+        setShowProjects(!showProjects);
+    }
     function handleDeleteProject(project_) {
         if (project_) {
             setProjects(projects.filter(project => project.id !== project_.id));

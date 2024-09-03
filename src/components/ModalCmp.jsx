@@ -13,7 +13,6 @@ export default function ModalCmp({children,showModal_PFn,setShowModal_PFn,savebt
         <div className = "Modal" ref={modalRef} onClick={closeModal}>
             <div className = "ModalContent">
                 {children}
-                <button onClick={savebtn} className = "save">save</button>
             </div>
         </div>
     )
