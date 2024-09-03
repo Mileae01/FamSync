@@ -7,6 +7,9 @@ export default function ProjectCmp({project,setSelectedProject_Pfn, removeProjec
     const id = project.id;
     //state for modals
     const [tasks,setTasks]=useState(task);
+    function renameProject(name_){
+        setName(name_);
+    }
     function handleOnClickEvent(){
         console.log(`Project ${project.id} isSelected:`, isSelected);
         setSelectedProject_Pfn(); // Call the select function to update the selected project in parent
@@ -17,7 +20,7 @@ export default function ProjectCmp({project,setSelectedProject_Pfn, removeProjec
             <label>{name}:</label>
             {isSelected && (
                 <>
-                    <RenameProjectCmp />
+                    <RenameProjectCmp renameProject_PFn={renameProject} />
                     <DeleteProjectCmp removeProjects_PFn={removeProjects_PFn}/>
                     
                 </>

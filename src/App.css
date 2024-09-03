@@ -227,3 +227,15 @@ html body {
     width: 40px;
     height: 40px;
 }
+.addNewProjectCmp form{
+    width: 500px;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.RenameProject form{
+    width: 500px;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
