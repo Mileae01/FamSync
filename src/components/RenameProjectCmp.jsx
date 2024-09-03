@@ -2,9 +2,9 @@ import '../App.css'
 import edit from '../assets/Edit.png'
 import {useState} from "react";
 import ModalCmp from "./ModalCmp.jsx";
-export default function RenameProjectCmp({renameProject_PFn}) {
+export default function RenameProjectCmp({project,renameProject_PFn}) {
     const [showModal, setShowModal] = useState(false);
-    const [text, setText] = useState("");
+    const [text, setText] = useState(project.name);
     const editProject = () => {
         setShowModal(true);
         //addProjects_PFn();
@@ -16,7 +16,6 @@ export default function RenameProjectCmp({renameProject_PFn}) {
     function handleSave(){
         console.log("rename from modal")
         renameProject_PFn(text);
-        setText("");
         setShowModal(false);
     }
     

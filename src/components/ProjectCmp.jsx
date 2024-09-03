@@ -20,7 +20,7 @@ export default function ProjectCmp({project,setSelectedProject_Pfn, removeProjec
             <label>{name}:</label>
             {isSelected && (
                 <>
-                    <RenameProjectCmp renameProject_PFn={renameProject} />
+                    <RenameProjectCmp renameProject_PFn={renameProject} project={project} />
                     <DeleteProjectCmp removeProjects_PFn={removeProjects_PFn}/>
                     
                 </>
