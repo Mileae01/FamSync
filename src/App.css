@@ -1,141 +1,229 @@
-html body{
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+html body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 
 }
-.App-header{
-  width: 100%;
-  color: white;
-  border: 5px solid #5a984c;
-  box-sizing: border-box;
-  height: 10vh;
-  
-}
-.App-footer{
-  width: 100%;
-  flex:1;
-  color: black;
-  border: 5px solid #6563d2;
-  box-sizing: border-box;
-}
-.App-main{
-  width: 80%;
-  color: white;
-  border: 5px solid #d0ab6b;
-  height: 70vh;
-  background-image: url("./assets/forest-BG1.jpg");
-  background-size: cover;
-  
-}
-.App-sidebar{
-  width: 20%;
- color: black;
-  border: 5px solid #e776f5;
-  flex: 1;
-  
-}
-.App{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  border: 5px solid #cc3c3c;
-  overflow: hidden;
-}
-.App-mainContainer{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  
-}
-.userCmp img{
-  width:60px;
-  height:60px;
-  padding: 0;
-  position: relative;
-  translate: 0 40px;
-  display: inline-block;
-}
-.userCmp p{
-  display:inline-block;
+
+.App-header {
+    width: 100%;
+    color: white;
+    border: 5px solid #5a984c;
+    box-sizing: border-box;
+    height: 10vh;
+
 }
 
-.addNewTodoCmp{
-  margin:10px
+.App-footer {
+    width: 100%;
+    flex: 1;
+    color: black;
+    border: 5px solid #6563d2;
+    box-sizing: border-box;
 }
-.addNewTodoCmp button{
-  width:100%;
-  background-color: #0080ff;
-  color: white;
+
+.App-main {
+    width: 80%;
+    color: white;
+    border: 5px solid #d0ab6b;
+    height: 70vh;
+    background-image: url("./assets/forest-BG1.jpg");
+    background-size: cover;
+
 }
-.addNewTodoCmp button:hover{
-  filter: brightness(1.1);
+
+.App-sidebar {
+    width: 20%;
+    color: black;
+    border: 5px solid #e776f5;
+    flex: 1;
+
 }
-.addNewProject_btn{
-  width:15px;
-  height: 15px;
-  border: 5px black solid;
-  
+
+.App {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #cc3c3c;
+    overflow: hidden;
 }
-.addNewProject_btn:hover{
-  background-color: #9a8b8b;
+
+.App-mainContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
 }
+
+.userCmp img {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    position: relative;
+    translate: 0 40px;
+    display: inline-block;
+}
+
+.userCmp p {
+    display: inline-block;
+}
+
+.addNewTodoCmp {
+    margin: 10px
+}
+
+.addNewTodoCmp button {
+    width: 100%;
+    background-color: #0080ff;
+    color: white;
+}
+
+.addNewTodoCmp button:hover {
+    filter: brightness(1.1);
+}
+
+.addNewProject_btn {
+    width: 15px;
+    height: 15px;
+    border: 5px black solid;
+
+}
+
+.addNewProject_btn:hover {
+    background-color: #9a8b8b;
+}
+
 .ProjectsCmp {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
 }
-.ProjectsCmp label{
-  flex: 1;
+
+.ProjectsCmp label {
+    flex: 1;
 }
-.ProjectCmp{
-  width: 100%;
+
+.ProjectCmp {
+    width: 100%;
 }
-.RenameProjectCmp{
-  width:15px;
-  height: 15px;
-  border: 5px black solid;
+
+.RenameProjectCmp {
+    width: 15px;
+    height: 15px;
+    border: 5px black solid;
 }
+
 .RenameProjectCmp:hover {
-  background-color: #9a8b8b;
+    background-color: #9a8b8b;
 }
-.deleteProjectCmp{
-  width:15px;
-  height: 15px;
-  border: 5px black solid;
-  right: 0;
+
+.deleteProjectCmp {
+    width: 15px;
+    height: 15px;
+    border: 5px black solid;
+    right: 0;
 }
-.deleteProjectCmp:hover{
-  background-color: #9a8b8b;
+
+.deleteProjectCmp:hover {
+    background-color: #9a8b8b;
 }
-.ProjectsCmpHeader{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+
+.ProjectsCmpHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
-.ProjectCmp.selected{
-  width: 100%;
-  background-color: #9a8b8b;
-  display: flex;
-  flex-direction: row;
+
+.ProjectCmp.selected {
+    width: 100%;
+    background-color: #9a8b8b;
+    display: flex;
+    flex-direction: row;
 }
+
 .ProjectCmp.selected label {
-  flex: 1;
+    flex: 1;
 }
+
 .Modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-.ModalContent{
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%,-25%);
-  background-color: whitesmoke;
+
+.ModalContent {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+.addNewTodoCmp form {
+    width: 500px;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.addNewTodoCmp form .text input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+.addNewTodoCmp Form .text input:focus {
+    outline: none;
+    border-bottom: 1px solid #0080ff;
+}
+.addNewTodoCmp form .remind {
+    display: flex;
+    flex-direction: row;
+    padding: .5rem;
+}
+.addNewTodoCmp form .remind .bell-icon {
+    transform: translateY(15px);
+}
+.addNewTodoCmp form .pick-day {
+    padding: 1rem;
+}
+.addNewTodoCmp form .pick-time {
+    padding: 1rem;
+}
+.addNewTodoCmp form .pick-project{
+    padding: 0.5rem;
+}
+.addNewTodoCmp form .projects {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.addNewTodoCmp form .projects .project  {
+    border: 1px solid #0080ff;
+    border-radius: 2px;
+    margin: 10px;
+}
+.addNewTodoCmp form .projects .project.active {
+    border: 1px solid #0080ff;
+    border-radius: 2px;
+    margin: 10px;
+    background-color: #0080ff;
+    color: white;
+}
+.addNewTodoCmp form .title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.addNewTodoCmp form .title h3{
+    flex: 1;
+}
+.addNewTodoCmp form .title .cancel{
+    width: 40px;
+    height: 40px;
 }
