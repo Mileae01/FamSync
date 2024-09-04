@@ -5,7 +5,8 @@ import {Bell, Palette, X} from "react-bootstrap-icons"
 import BasicDatePicker from "./BasicDatePicker.jsx";
 import BasicTimePicker from "./BasicTimePicker.jsx";
 
-export default function AddNewTodoCmp(project) {
+
+export default function AddNewTodoCmp() {
     const [showModal, setShowModal] = useState(false);
     const [text, setText] = useState("");
     const [day, setDay] = useState(new Date());

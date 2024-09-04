@@ -4,7 +4,7 @@ import {useContext} from "react";
 import {TodoContext} from "../Context/TodoContextProvider.jsx";
 
 export default function TodosCmp() {
-    const selectedProject = "today"
+    const {selectedProject} = useContext(TodoContext);
     const todos = [
         {
             id: 'personalid',
@@ -41,7 +41,7 @@ export default function TodosCmp() {
     return (
         <div className="TodosCmp">
             <div className="selectedProject">
-                {selectedProject}
+                {selectedProject.name}
             </div>
             <div className="Todos">
                 {

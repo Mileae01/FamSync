@@ -2,16 +2,13 @@ import UserCmp from "./UserCmp.jsx";
 import CalenderCmp from "./CalenderCmp.jsx";
 import AddNewTodoCmp from "./AddNewTodoCmp.jsx";
 import ProjectsCmp from "./ProjectsCmp.jsx";
-export default function SideBarCmp({ setSelectedProject_Pfn, selectedProject }) {
+export default function SideBarCmp() {
     return (
         <div className="SideBarCmp">
             <UserCmp />
-            <AddNewTodoCmp project={selectedProject} />
+            <AddNewTodoCmp  />
             <CalenderCmp />
-            <ProjectsCmp
-                selectedProject={selectedProject}
-                setSelectedProject_Pfn={setSelectedProject_Pfn}  // <-- Consistent name
-            />
+            <ProjectsCmp/>
         </div>
     );
 }

@@ -1,10 +1,13 @@
 import RenameProjectCmp from "./RenameProjectCmp.jsx";
 import DeleteProjectCmp from "./DeleteProjectCmp.jsx";
 import '../App.css'
-import {useState} from "react";
-export default function ProjectCmp({project,setSelectedProject_Pfn, removeProjects_PFn,isSelected,task}){
+import {useContext, useState} from "react";
+import {TodoContext} from "../Context/TodoContextProvider.jsx";
+
+export default function ProjectCmp({project,removeProjects_PFn,isSelected,task}){
     const [name,setName]=useState(project.name);
     const id = project.id;
+    const {setSelectedProject}= useContext(TodoContext);
     //state for modals
     const [tasks,setTasks]=useState(task);
     function renameProject(name_){
@@ -12,7 +15,7 @@ export default function ProjectCmp({project,setSelectedProject_Pfn, removeProjec
     }
     function handleOnClickEvent(){
         console.log(`Project ${project.id} isSelected:`, isSelected);
-        setSelectedProject_Pfn(); // Call the select function to update the selected project in parent
+        setSelectedProject(project);
     }
     return(
         <div className={`ProjectCmp ${isSelected ? 'selected' : ''}`}

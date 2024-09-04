@@ -3,8 +3,10 @@ import AddNewProjectCmp from "./AddNewProjectCmp.jsx";
 import '../App.css'
 import {useState} from "react";
 import ProjectDropDownCmp from "./ProjectDropDownCmp.jsx";
-
-export default function ProjectsCmp({ setSelectedProject_Pfn, selectedProject }) {
+import {useContext} from "react";
+import {TodoContext} from "../Context/TodoContextProvider.jsx";
+export default function ProjectsCmp() {
+    const {selectedProject} = useContext(TodoContext);
     const [projects, setProjects] = useState([]);
     const [counter, setCounter] = useState(0);
     const [showProjects,setShowProjects] = useState(false);
@@ -53,7 +55,6 @@ export default function ProjectsCmp({ setSelectedProject_Pfn, selectedProject })
                         key={project.id}
                         project={project}
                         removeProjects_PFn={() => handleDeleteProject(project)}
-                        setSelectedProject_Pfn={() => setSelectedProject_Pfn(project)}  // <-- Updated here
                         isSelected={handleIsSelected(project.id)}
                     />
                 ))}
