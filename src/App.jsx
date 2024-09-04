@@ -4,7 +4,7 @@ import HeaderCmp from "./components/HeaderCmp.jsx";
 import MainCmp from "./components/MainCmp.jsx";
 import FooterCmp from "./components/FooterCmp.jsx";
 import {useState} from "react";
-
+import {TodoContextProvider} from "./Context/TodoContextProvider.jsx";
 function App() {
     const [selectedProject, setSelectedProject] = useState(null);
 
@@ -14,6 +14,7 @@ function App() {
     }
 
     return (
+        <TodoContextProvider>
         <div className="App">
             <header className="App-header"><HeaderCmp /></header>
             <div className="App-mainContainer">
@@ -27,6 +28,7 @@ function App() {
             </div>
             <footer className="App-footer"><FooterCmp /></footer>
         </div>
+        </TodoContextProvider>
     );
 }
 

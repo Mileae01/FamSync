@@ -16,7 +16,9 @@ export default function AddNewTodoCmp(project) {
     }
     return (
         <div className="addNewTodoCmp">
-            <button className="addNewTodoCmp_btn" type="button" onClick={() => addtodo()}>Add Todo</button>
+            <div className="btn">
+                <button className="addNewTodoCmp_btn" type="button" onClick={() => addtodo()}>Add Todo</button>
+            </div>
             <ModalCmp showModal_PFn={showModal} setShowModal_PFn={setShowModal}>
                 <form>
                     <div className={"title"}>

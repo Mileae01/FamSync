@@ -1,7 +1,7 @@
-export default function Next7DayCmp() {
+export default function Next7DayCmp({todos}) {
     return(
         <div className="Next7DayCmp">
-            next7day
+            {todos}
         </div>
     )
 }
