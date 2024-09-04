@@ -23,6 +23,10 @@ html body {
     box-sizing: border-box;
 }
 
+.SidebarCmp {
+    margin-top: 0;
+}
+
 .App-main {
     width: 80%;
     color: white;
@@ -30,6 +34,7 @@ html body {
     height: 70vh;
     background-image: url("./assets/forest-BG1.jpg");
     background-size: cover;
+    position: relative;
 
 }
 
@@ -38,6 +43,7 @@ html body {
     color: black;
     border: 5px solid #e776f5;
     flex: 1;
+    margin-top: 0;
 
 }
 
@@ -66,33 +72,51 @@ html body {
     display: inline-block;
 }
 
+.userCmp {
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 0;
+}
+
 .userCmp p {
     display: inline-block;
 }
 
 .addNewTodoCmp {
-    margin: 10px
+    margin: 10px;
 }
 
-.addNewTodoCmp button {
+.addNewTodoCmp .btn .addNewTodoCmp_btn {
     width: 100%;
     background-color: #0080ff;
     color: white;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
 }
 
-.addNewTodoCmp button:hover {
+.addNewTodoCmp .btn {
+
+    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
+}
+
+
+.addNewTodoCmp .btn button:hover {
     filter: brightness(1.1);
+
 }
 
 .addNewProject_btn {
-    width: 15px;
-    height: 15px;
-    border: 5px black solid;
+    width: 20px;
+    height: 20px;
 
 }
 
 .addNewProject_btn:hover {
-    background-color: #9a8b8b;
+    filter: brightness(1.1);
 }
 
 .ProjectsCmp {
@@ -154,6 +178,7 @@ html body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 .ModalContent {
@@ -169,6 +194,7 @@ html body {
     background-color: whitesmoke;
     border-radius: 10px;
 }
+
 .addNewTodoCmp form .text input {
     width: 100%;
     font-size: 1rem;
@@ -176,38 +202,47 @@ html body {
     border-radius: 5px;
     height: 30px;
 }
+
 .addNewTodoCmp Form .text input:focus {
     outline: none;
     border-bottom: 1px solid #0080ff;
 }
+
 .addNewTodoCmp form .remind {
     display: flex;
     flex-direction: row;
     padding: .5rem;
 }
+
 .addNewTodoCmp form .remind .bell-icon {
     transform: translateY(15px);
 }
+
 .addNewTodoCmp form .pick-day {
     padding: 1rem;
 }
+
 .addNewTodoCmp form .pick-time {
     padding: 1rem;
 }
-.addNewTodoCmp form .pick-project{
+
+.addNewTodoCmp form .pick-project {
     padding: 0.5rem;
 }
+
 .addNewTodoCmp form .projects {
     padding: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.addNewTodoCmp form .projects .project  {
+
+.addNewTodoCmp form .projects .project {
     border: 1px solid #0080ff;
     border-radius: 2px;
     margin: 10px;
 }
+
 .addNewTodoCmp form .projects .project.active {
     border: 1px solid #0080ff;
     border-radius: 2px;
@@ -215,27 +250,122 @@ html body {
     background-color: #0080ff;
     color: white;
 }
-.addNewTodoCmp form .title{
+
+.addNewTodoCmp form .title {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
-.addNewTodoCmp form .title h3{
+
+.addNewTodoCmp form .title h3 {
     flex: 1;
 }
-.addNewTodoCmp form .title .cancel{
+
+.addNewTodoCmp form .title .cancel {
     width: 40px;
     height: 40px;
 }
-.addNewProjectCmp form{
-    width: 500px;
+
+.addNewProjectCmp form {
+    width: 300px;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+
+}
+
+.addNewProjectCmp form .text input {
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.addNewProjectCmp form .text input:focus {
+    outline: none;
+    border-bottom: 1px solid #0080ff;
+}
+
+.addNewProjectCmp form .btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.addNewProjectCmp form .btns .cancel {
+    flex: 1;
+}
+
+.addNewProjectCmp form .btns .addProject {
+    flex: 1;
+    background-color: #0080ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.addNewProjectCmp form .btns button:hover {
+    filter: brightness(1.1);
+}
+
+.RenameProject form {
+    width: 300px;
     padding: 1rem;
     background-color: whitesmoke;
     border-radius: 10px;
 }
-.RenameProject form{
-    width: 500px;
-    padding: 1rem;
+
+.RenameProject form .text input:focus {
+    outline: none;
+    border-bottom: 1px solid #0080ff;
+}
+
+.TodosCmp {
+    width: 450px;
+    height: 80%;
     background-color: whitesmoke;
     border-radius: 10px;
+    padding: 10px;
+    color: black;
+    margin: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    opacity: 0.9;
+
+}
+
+.TodosCmp .selectedProject {
+    margin: 1rem 0;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.TodosCmp .Todos {
+    overflow-y: auto;
+}
+
+.TodoCmp .text {
+    position: relative;
+    flex: 1;
+}
+
+.TodoCmp .text .line {
+    height: 1px;
+    background: #bebebe;
+    position: absolute;
+    top: 37%;
+    width: 0;
+    transition: width 0.25s ease-in-out;
+
+}
+
+.TodoCmp .text .line-through {
+    width: 100%;
+}
+
+.TodoCmp {
+    display: flex;
+    align-items: center;
 }

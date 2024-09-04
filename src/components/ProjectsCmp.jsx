@@ -27,9 +27,12 @@ export default function ProjectsCmp({ setSelectedProject_Pfn, selectedProject })
     }
 
     function handleAddNewProject(name) {
+        if(!name){
+            return;
+        }
         const newProject = {
             id: counter,
-            name: `${name} ${counter}`,
+            name: name,
             task:["t"]
         };
         setCounter(counter + 1);
