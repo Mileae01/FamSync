@@ -134,9 +134,8 @@ html body {
 }
 
 .RenameProjectCmp {
-    width: 15px;
-    height: 15px;
-    border: 5px black solid;
+    width: 19px;
+    height: 19px;
 }
 
 .RenameProjectCmp:hover {
@@ -144,9 +143,8 @@ html body {
 }
 
 .deleteProjectCmp {
-    width: 15px;
-    height: 15px;
-    border: 5px black solid;
+    width: 20px;
+    height: 20px;
     right: 0;
 }
 

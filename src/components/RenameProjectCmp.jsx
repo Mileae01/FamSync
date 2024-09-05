@@ -15,7 +15,8 @@ export default function RenameProjectCmp({project,renameProject_PFn}) {
     }
     function handleSave(){
         console.log("rename from modal")
-        renameProject_PFn(text);
+        project.name = text;
+        renameProject_PFn(project);
         setShowModal(false);
     }
     

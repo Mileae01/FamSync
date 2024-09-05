@@ -2,22 +2,21 @@ import ProjectCmp from "./ProjectCmp.jsx";
 import AddNewProjectCmp from "./AddNewProjectCmp.jsx";
 import '../App.css'
 import {useState} from "react";
-import ProjectDropDownCmp from "./ProjectDropDownCmp.jsx";
 import {useContext} from "react";
 import {TodoContext} from "../Context/TodoContextProvider.jsx";
 export default function ProjectsCmp() {
     const {selectedProject} = useContext(TodoContext);
-    const [projects, setProjects] = useState([]);
+    const {addProject} = useContext(TodoContext);
+    const {removeProject} = useContext(TodoContext);
+    const {projects} = useContext(TodoContext);
+    // const [projects, setProjects] = useState([]);
     const [counter, setCounter] = useState(0);
-    const [showProjects,setShowProjects] = useState(false);
+    // const [showProjects,setShowProjects] = useState(false);
     
-    function toggleShowProjects(){
-        console.log("toggleShowProjects");
-        setShowProjects(!showProjects);
-    }
+
     function handleDeleteProject(project_) {
         if (project_) {
-            setProjects(projects.filter(project => project.id !== project_.id));
+            removeProject(project_);
         }
     }
 
@@ -35,11 +34,10 @@ export default function ProjectsCmp() {
         const newProject = {
             id: counter,
             name: name,
-            task:["t"]
+            task:[]
         };
         setCounter(counter + 1);
-        const newProjects = [...projects, newProject];
-        setProjects(newProjects);
+        addProject(newProject);
     }
 
 
