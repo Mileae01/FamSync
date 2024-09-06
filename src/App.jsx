@@ -19,12 +19,8 @@ function App() {
             <header className="App-header"><HeaderCmp /></header>
             <div className="App-mainContainer">
                 <aside className="App-sidebar">
-                    <SideBarCmp
-                        // selectedProject={selectedProject}
-                        // setSelectedProject_Pfn={handleSetSelectedProject}  // <-- Consistent name
-                    />
+                    <SideBarCmp/>
                 </aside>
-                {/*<main className="App-main"><MainCmp selectedProject={selectedProject} /></main>*/}
                 <main className="App-main"><MainCmp/></main>
             </div>
             <footer className="App-footer"><FooterCmp /></footer>

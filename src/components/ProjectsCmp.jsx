@@ -34,7 +34,8 @@ export default function ProjectsCmp() {
         const newProject = {
             id: counter,
             name: name,
-            task:[]
+            todos:[],
+            
         };
         setCounter(counter + 1);
         addProject(newProject);
@@ -52,7 +53,6 @@ export default function ProjectsCmp() {
                     <ProjectCmp
                         key={project.id}
                         project={project}
-                        removeProjects_PFn={() => handleDeleteProject(project)}
                         isSelected={handleIsSelected(project.id)}
                     />
                 ))}

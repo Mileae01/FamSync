@@ -3,7 +3,7 @@ import {useState, createContext} from "react";
 const TodoContext = createContext()
 
 function TodoContextProvider({children}) {
-    const defaultProject = "today";
+    const defaultProject = "Today";
     const [selectedProject, setSelectedProject] = useState(defaultProject);
     const [projects, setProjects] = useState([]);
     function renameProject(updatedProject)
@@ -22,6 +22,7 @@ function TodoContextProvider({children}) {
     }
     function deleteProject(project_){
         setProjects(projects.filter(project => project.id !== project_.id));
+        setSelectedProject(defaultProject)  ;
     }
     return (
         <TodoContext.Provider
