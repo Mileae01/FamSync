@@ -23,7 +23,7 @@ export default function TodoCmp({todo}) {
             </div>
             <div className="text">
                 <p style={{color: todo.checked ? "#bebebe" : "#000"}}>{todo.text}</p>
-                <span>{todo.time} - {todo.project}</span>
+                <span>{todo.time}-{todo.date}</span>
                 <div className={`line ${todo.checked ? "line-through" : ""}`}></div>
             </div>
             <div className="add-to-next-day">

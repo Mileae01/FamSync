@@ -3,14 +3,36 @@ import BasicDatePicker from "./BasicDatePicker.jsx";
 import BasicTimePicker from "./BasicTimePicker.jsx";
 
 
-export default function TodoForm({handleSubmit, heading =false,text,setText,day,setDay,time,setTime,projects,showButtons=false,setShowModal=false}) {
-    return(
-        <form onSubmit={handleSubmit}>
+export default function TodoForm({
+                                     handleSubmit,
+                                     heading = false,
+                                     text,
+                                     setText,
+                                     day,
+                                     setDay,
+                                     time,
+                                     setTime,
+                                     projects,
+                                     showButtons = false,
+                                     setShowModal = false,
+                                     selectedProject,
+                                     setSelectedProject,
+                                     showProjectName = false
+                                 }) {
+    function handleSave(){
+        handleSubmit();
+        setShowModal(false);
+    }
+    return (
+        <form>
             <div className={"title"}>
                 {heading && <h3>{heading}</h3>}
                 {showButtons &&
                     <X className={"cancel"} size='40' onClick={() => setShowModal(false)}/>}
             </div>
+
+            {showProjectName && <div>{`Current Project: ${selectedProject.name}`}</div> }
+
             <div className="text">
                 <input type="text"
                        value={text}
@@ -34,19 +56,19 @@ export default function TodoForm({handleSubmit, heading =false,text,setText,day,
             </div>
             <div className="projects">
                 {projects.map(project =>
-                    <div className="project" key={project.id}>
+                    <div className="project" key={project.id} onClick={() => setSelectedProject(project)}>
                         {project.name}
                     </div>)}
             </div>
 
             <div className="confirm">
                 {showButtons &&
-                    <button type="button">Add Todo</button>
+                    <button type="button" onClick={handleSave}>Add Todo</button>
                 }
             </div>
 
         </form>
-            
-        
+
+
     )
 }

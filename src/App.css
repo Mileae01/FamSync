@@ -323,14 +323,15 @@ html body {
     height: 80%;
     background-color: whitesmoke;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     color: black;
     margin: 10px;
     position: absolute;
     bottom: 40px;
     left: 40px;
     opacity: 0.9;
-
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .TodosCmp .selectedProject {
@@ -338,10 +339,6 @@ html body {
     text-transform: capitalize;
     font-size: 1.2rem;
     border-bottom: 1px solid #eeeeee;
-}
-
-.TodosCmp .Todos {
-    overflow-y: auto;
 }
 
 .TodoCmp .text {
@@ -386,12 +383,14 @@ html body {
 .CalenderCmp .header .title p {
     margin: 0;
 }
+
 .CalenderCmp .calenderItems {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
 }
-.editTodoCmp{
+
+.editTodoCmp {
     position: absolute;
     bottom: 40px;
     left: calc(40px + 450px + 40px);
@@ -402,5 +401,6 @@ html body {
     border-radius: 10px;
     color: black;
     opacity: 0.9;
-    padding: 10px;
+    padding: 20px;
+    box-sizing: border-box;
 }

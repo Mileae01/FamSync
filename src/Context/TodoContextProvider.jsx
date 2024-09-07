@@ -22,7 +22,24 @@ function TodoContextProvider({children}) {
     }
     function deleteProject(project_){
         setProjects(projects.filter(project => project.id !== project_.id));
-        setSelectedProject(defaultProject)  ;
+        setSelectedProject(defaultProject);
+    }
+    function addTodoToProject(todo, project_) {
+        setProjects(prevProjects => {
+            const updatedProjects = prevProjects.map(project =>
+                project.id === project_.id
+                    ? { ...project, todos: [...project.todos, todo] }
+                    : project
+            );
+
+            // Find the updated project directly from updatedProjects
+            const updatedProject = updatedProjects.find(project => project.id === project_.id);
+
+            // Update the selected project to trigger a re-render
+            setSelectedProject(updatedProject);
+
+            return updatedProjects;  // Return updatedProjects to setProjects
+        });
     }
     return (
         <TodoContext.Provider
@@ -33,7 +50,8 @@ function TodoContextProvider({children}) {
                     projects,
                     renameProject,
                     addProject,
-                    deleteProject
+                    deleteProject,
+                    addTodoToProject,
                 }
             }>
             {children}
